@@ -5,7 +5,7 @@ use crate::setting::*;
 
 pub struct TransPipline
 {
-    setting_manager : 
+    setting_manager : SettingManager,
     input_module : OneInput,
     output_module : NOutput
 }
@@ -13,13 +13,14 @@ pub struct TransPipline
 impl TransPipline
 {
     pub fn new() -> Self {
-
-        return {
-            OneInput::new(),
-            NOutput::new()
+        Self {
+            setting_manager: SettingManager::new(),
+            input_module: OneInput::new(),
+            output_module: NOutput::new(),
         }
     }
-    pub fn go() {
+
+    pub fn go(&mut self) {
 
         // 세팅정보 읽기
         // 등록된 입력 리스트 입력 모듈로 전달

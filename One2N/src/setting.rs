@@ -28,7 +28,7 @@ pub struct SettingManager {
 
 impl SettingManager {
 
-    pub fn new(&self) -> Self {
+    pub fn new() -> Self {
         return Self{lang : Language::Default}
     }
 
