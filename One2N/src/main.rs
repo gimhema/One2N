@@ -1,3 +1,5 @@
+use crate::pipline::TransPipline;
+
 mod agent;
 mod input;
 mod output;
@@ -7,5 +9,9 @@ mod tsv_parser;
 mod setting;
 
 fn main() {
-    println!("Hello, world!");
+
+    let mut one_to_n_pipiline = TransPipline::new();
+
+    one_to_n_pipiline.go();
+
 }

@@ -23,9 +23,15 @@ impl TransPipline
     pub fn go(&mut self) {
 
         // 세팅정보 읽기
-        // 등록된 입력 리스트 입력 모듈로 전달
-        // 입력모듈이 모델 에이전트에게 추론 및 생성 지시
-        // 에이전트가 입력데이터에 대한 출력값을 생성
+        println!("Read Setting Info . . . .");
 
+        // 등록된 입력 리스트 입력 모듈로 전달
+        println!("Input Setp . . . .");
+
+        // 입력모듈이 모델 에이전트에게 추론 및 생성 지시
+        println!("Translate Step . . . .");
+
+        // 에이전트가 입력데이터에 대한 출력값을 생성
+        println!("Generate Completed.");
     }   
 }
