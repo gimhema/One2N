@@ -29,7 +29,7 @@ pub struct SettingManager {
 impl SettingManager {
 
     pub fn new(&self) -> Self {
-        return {Language::Default}
+        return Self{lang : Language::Default}
     }
 
 }

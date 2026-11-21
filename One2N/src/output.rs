@@ -9,7 +9,7 @@ impl NOutput {
 
     pub fn new() -> Self {
 
-        return {}
+        return Self{generate_path : "".to_string()}
 
     }
 

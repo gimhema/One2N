@@ -7,9 +7,9 @@ pub struct OneInput
 
 impl OneInput {
 
-    pub fn new() -> Self {
+    pub fn new(&self) -> Self {
 
-        return {""}
+        return Self{input_path : "".to_string()}
 
     }
     
