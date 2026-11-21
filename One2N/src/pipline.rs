@@ -2,12 +2,14 @@
 use crate::input::*;
 use crate::output::*;
 use crate::setting::*;
+use crate::agent::*;
 
 pub struct TransPipline
 {
     setting_manager : SettingManager,
     input_module : OneInput,
-    output_module : NOutput
+    output_module : NOutput,
+    model_agent : ModelAgent
 }
 
 impl TransPipline
@@ -17,6 +19,7 @@ impl TransPipline
             setting_manager: SettingManager::new(),
             input_module: OneInput::new(),
             output_module: NOutput::new(),
+            model_agent : ModelAgent::new()
         }
     }
 
@@ -24,6 +27,7 @@ impl TransPipline
         println!("Start Setup");        
 
         // 모델 로딩
+        self.model_agent.load_model();
     }
 
     pub fn go(&mut self) {
