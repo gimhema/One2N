@@ -12,6 +12,8 @@ fn main() {
 
     let mut one_to_n_pipiline = TransPipline::new();
 
+    one_to_n_pipiline.init();
+
     one_to_n_pipiline.go();
 
 }

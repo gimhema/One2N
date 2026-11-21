@@ -20,6 +20,12 @@ impl TransPipline
         }
     }
 
+    pub fn init(&mut self) {
+        println!("Start Setup");        
+
+        // 모델 로딩
+    }
+
     pub fn go(&mut self) {
 
         // 세팅정보 읽기
