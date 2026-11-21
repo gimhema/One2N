@@ -1,9 +1,11 @@
 
 use crate::input::*;
 use crate::output::*;
+use crate::setting::*;
 
 pub struct TransPipline
 {
+    setting_manager : 
     input_module : OneInput,
     output_module : NOutput
 }

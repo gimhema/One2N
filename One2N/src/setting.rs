@@ -1,5 +1,6 @@
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Language {
+    Default,
     Korean,
     English,
     Japanese,
@@ -11,6 +12,7 @@ impl Language {
     /// BCP 47 태그
     pub fn code(&self) -> &'static str {
         match self {
+            Language::Default => "none",
             Language::Korean => "ko",
             Language::English => "en",
             Language::Japanese => "ja",
@@ -18,4 +20,16 @@ impl Language {
             Language::ChineseTraditional => "zh-Hant",
         }
     }
+}
+
+pub struct SettingManager {
+    lang : Language
+}
+
+impl SettingManager {
+
+    pub fn new(&self) -> Self {
+        return {Language::Default}
+    }
+
 }
