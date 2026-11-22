@@ -1,5 +1,5 @@
 use std::collections::{HashSet};
-
+use crate::agent::ModelOption;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Language {
@@ -26,6 +26,8 @@ impl Language {
 }
 
 pub struct SettingManager {
+    model_path : String,
+    model_load_opt : ModelOption,
     input_lang : Language,
     output_lang : HashSet<Language>
 }
@@ -34,6 +36,8 @@ impl SettingManager {
 
     pub fn new() -> Self {
         return Self{
+            model_path : "".to_string(),
+            model_load_opt : ModelOption::Default,
             input_lang : Language::Default,
             output_lang : HashSet::new()
         }
