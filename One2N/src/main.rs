@@ -2,6 +2,7 @@ use crate::pipline::TransPipline;
 
 mod agent;
 mod input;
+mod llm_interface;
 mod output;
 mod pipline;
 mod prompt;

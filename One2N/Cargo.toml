@@ -4,3 +4,14 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "3", features = ["json"] }
+llama-cpp-2 = { version = "0.1.161", optional = true }
+
+[features]
+default = []
+# llama.cpp 직접 로딩 백엔드 (빌드 시 cmake + libclang 필요)
+llama-cpp = ["dep:llama-cpp-2"]
+# CUDA 가속 (llama-cpp 포함)
+cuda = ["llama-cpp", "llama-cpp-2/cuda"]
