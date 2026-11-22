@@ -1,6 +1,7 @@
 use crate::pipline::TransPipline;
 
 mod agent;
+mod ini_parser;
 mod input;
 mod llm_interface;
 mod output;
