@@ -23,19 +23,36 @@ impl TransPipline
         }
     }
 
-    pub fn init(&mut self) {
-        println!("Start Setup");        
-
-        // self.model_agent.init(path, opt);
-
-        // 모델 로딩
-        self.model_agent.load_model();
-    }
-
-    pub fn go(&mut self) {
+    pub fn init(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+        println!("Start Setup");
 
         // 세팅정보 읽기
         println!("Read Setting Info . . . .");
+        self.setting_manager.read_ini(DEFAULT_SETTING_PATH)?;
+        println!(
+            "  model : {:?} ({})\n  input : {}\n  output: {}",
+            self.setting_manager.model_load_opt(),
+            self.setting_manager.model_path(),
+            self.setting_manager.input_lang().code(),
+            self.setting_manager
+                .output_lang_sorted()
+                .iter()
+                .map(|l| l.code())
+                .collect::<Vec<_>>()
+                .join(", ")
+        );
+
+        self.model_agent.init(
+            self.setting_manager.model_path().to_string(),
+            self.setting_manager.model_load_opt(),
+        );
+
+        // 모델 로딩
+        self.model_agent.load_model();
+        Ok(())
+    }
+
+    pub fn go(&mut self) {
 
         // 등록된 입력 리스트 입력 모듈로 전달
         println!("Input Setp . . . .");
