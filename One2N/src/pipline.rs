@@ -26,6 +26,8 @@ impl TransPipline
     pub fn init(&mut self) {
         println!("Start Setup");        
 
+        // self.model_agent.init(path, opt);
+
         // 모델 로딩
         self.model_agent.load_model();
     }
