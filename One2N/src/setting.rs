@@ -1,3 +1,6 @@
+use std::collections::{HashSet};
+
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Language {
     Default,
@@ -23,13 +26,29 @@ impl Language {
 }
 
 pub struct SettingManager {
-    lang : Language
+    input_lang : Language,
+    output_lang : HashSet<Language>
 }
 
 impl SettingManager {
 
     pub fn new() -> Self {
-        return Self{lang : Language::Default}
+        return Self{
+            input_lang : Language::Default,
+            output_lang : HashSet::new()
+        }
+    }
+
+    pub fn read_ini() {
+        // 지정된 경로의 ini 파일을 읽음
+
+        // model path 설정
+
+        // model load 방식 설정
+
+        // 출발 언어 설정
+
+        // 도착 언어 설정
     }
 
 }
