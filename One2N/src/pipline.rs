@@ -48,7 +48,7 @@ impl TransPipline
         );
 
         // 모델 로딩
-        self.model_agent.load_model();
+        self.model_agent.load_model()?;
         Ok(())
     }
 
