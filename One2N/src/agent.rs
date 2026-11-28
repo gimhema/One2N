@@ -30,7 +30,13 @@ impl ModelAgent
 
     pub fn load_model(&mut self)
     {
+        let current_option : ModelOption = self.model_option;
 
+        match current_option {
+            ModelOption::Default => {},
+            ModelOption::Ollama => {},
+            ModelOption::GGUF => {}
+        }  
     }
     
     pub fn generate(&mut self) 
