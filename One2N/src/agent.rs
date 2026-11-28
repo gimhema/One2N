@@ -1,4 +1,4 @@
-
+use crate::model;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum ModelOption {

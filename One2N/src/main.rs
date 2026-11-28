@@ -9,6 +9,7 @@ mod pipline;
 mod prompt;
 mod tsv_parser;
 mod setting;
+mod model;
 
 fn main() {
 
